@@ -1,2 +1,2 @@
-# initial
-Initial install Wordpress and plugins
+# Portfolio
+Personal portfolio
