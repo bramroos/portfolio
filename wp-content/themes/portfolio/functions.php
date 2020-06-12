@@ -38,10 +38,18 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // require_once(get_template_directory().'/functions/related-posts.php'); 
 
 // Use this as a template for custom post types
-// require_once(get_template_directory().'/functions/custom-post-type.php');
+require_once(get_template_directory().'/functions/portfolio.php');
 
 // Customize the WordPress login menu
 // require_once(get_template_directory().'/functions/login.php'); 
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
+
+// Custom image sizes (http://rachievee.com/responsive-images-in-wordpress/)
+function custom_add_image_sizes(){
+	add_image_size( 'large-img', 1600, 1000, array('center', 'center') );
+	add_image_size( 'medium-img', 1024, 640, array('center', 'center') );
+    add_image_size( 'small-img', 640, 400, array('center', 'center') );
+}
+add_action( 'init', 'custom_add_image_sizes');
