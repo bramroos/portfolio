@@ -4,24 +4,150 @@ Stylesheet: Global Stylesheet
 
 *************************************************/
 
+/*********************
+HELPERS
+*********************/
+
+$small: 30px;
+$medium: 60px;
+$large: 120px;
+
+.pt-s {
+	padding-top:$small;
+}
+.pb-s {
+	padding-bottom:$small;
+}
+.pt-m {
+	padding-top:$medium;
+	@media screen and (max-width: 640px) {
+		padding-top:$small;
+	}
+}
+.pb-m {
+	padding-bottom:$medium;
+	@media screen and (max-width: 640px) {
+		padding-bottom:$small;
+	}
+}
+.pt-l {
+	padding-top:$large;
+	@media screen and (max-width: 640px) {
+		padding-top:$small;
+	}
+}
+.pb-l {
+	padding-bottom:$large;
+	@media screen and (max-width: 640px) {
+		padding-bottom:$small;
+	}
+}
+
+.mt-s {
+	margin-top:$small;
+}
+.mb-s {
+	margin-bottom:$small;
+}
+.mt-m {
+	margin-top:$medium;
+}
+.mb-m {
+	margin-bottom:$medium;
+}
+.mt-l {
+	margin-top:$large;
+}
+.mb-l {
+	margin-bottom:$large;
+}
+
+
+// Home Intro
+.home-intro {
+	margin-left: -20px;
+	font-weight: 400;
+}
+
+
+// Portfolio
+a.card {
+	.card-inner {
+		transition: all .5s ease-in-out;
+
+		.content {
+			transition: inherit;
+			width: calc(100% - 30px);
+			color: $black;
+		}
+	}
+	&:hover .card-inner .content {
+		margin-left: 30px;
+		color: $white;
+	}
+	&:hover .card-inner {
+		background-color: $black;
+	}	
+}
+	
 
 
 
+
+
+// &&&&&&
 .left {
-	height: 60vh;
+	figure {
+		height: 100vh;
+
+		img {
+			object-fit: cover;
+			height: 100%;
+		}
+	}
 }
 
-.right {
-	height: 100vh;
+
+
+.aspect-ratio-box {
+	position: relative;
+	overflow: hidden;
+	&::before {
+		content: "";
+		width: 1px;
+		margin-left: -1px;
+		float: left;
+		height: 0;
+		// padding-bottom: 100%;
+	}
+
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
-.full-left {
-	height: 100vh;
+.aspect-ratio-box.square {
+	padding-bottom: 100%;
 }
 
-.full-right {
-	height: 100vh;
+.aspect-ratio-box.wide::before {
+	padding-bottom: 56.25%;
 }
+
+.aspect-ratio-box.tall::before {
+	padding-bottom: 125%;
+}
+
+.aspect-ratio-box img {
+    position: absolute;
+    min-width: auto!important;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 
 /*********************
 POSTS & CONTENT STYLES

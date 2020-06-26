@@ -62,11 +62,53 @@
 
 @import '../../../node_modules/foundation-sites/scss/util/util';
 
+@font-face {
+  font-family: 'Cambon';
+  src: url('../../assets/fonts/Cambon_Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cambon';
+  src: url('../../assets/fonts/Cambon_SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cambon';
+  src: url('../../assets/fonts/Cambon_Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SamsungSharp';
+  src: url('../../assets/fonts/SamsungSharpSans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SamsungSharp';
+  src: url('../../assets/fonts/SamsungSharpSans-Medium.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SamsungSharp';
+  src: url('../../assets/fonts/SamsungSharpSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 // 1. Global
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #1779ba,
@@ -78,11 +120,11 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$black: #1b1b1b;
 $white: #fefefe;
-$body-background: $white;
+$body-background: #f0e6e1;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'SamsungSharp', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -131,12 +173,14 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+// $header-font-family: $body-font-family;
+$header-font-family: 'Cambon', Georgia, s erif;
+// $header-font-weight: $global-weight-normal;
+$header-font-weight: 600;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
-$header-lineheight: 1.4;
+$header-lineheight: 1.1;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
@@ -148,9 +192,9 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
+    'h1': ('font-size': 90),
+    'h2': ('font-size': 70),
+    'h3': ('font-size': 46),
     'h4': ('font-size': 25),
     'h5': ('font-size': 20),
     'h6': ('font-size': 16),
@@ -327,7 +371,7 @@ $callout-link-tint: 30%;
 // 14. Card
 // --------
 
-$card-background: $white;
+$card-background: transparent;
 $card-font-color: $body-font-color;
 $card-divider-background: $light-gray;
 $card-border: 1px solid $light-gray;
@@ -860,7 +904,8 @@ $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
   small: 20px,
-  medium: 30px
+  medium: 30px,
+  large: 50px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;

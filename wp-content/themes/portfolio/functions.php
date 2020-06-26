@@ -32,7 +32,7 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // require_once(get_template_directory().'/functions/editor-styles.php'); 
 
 // Remove Emoji Support
-// require_once(get_template_directory().'/functions/disable-emoji.php'); 
+require_once(get_template_directory().'/functions/disable-emoji.php'); 
 
 // Related post function - no need to rely on plugins
 // require_once(get_template_directory().'/functions/related-posts.php'); 
